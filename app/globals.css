@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --brand-red: #e31837;
+  --brand-red-hover: #ff284d;
+  --brand-red-dark: #b8122c;
+  --dark: #0f1117;
+  --carbon: #08090d;
+  --obsidian: #141721;
+  --cream: #f8fafc;
+  --beige: #c6a17b;
+  --grey: #64748b;
+  --line: #e2e8f0;
+  --line-dark: #1e2433;
+  --dark-bar: #08090d;
+  --font-manrope: 'Manrope', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display-serif: 'Fraunces', Georgia, serif;
+}
+
+@theme inline {
+  --color-brand: var(--brand-red);
+  --color-brand-hover: var(--brand-red-hover);
+  --color-brand-dark: var(--brand-red-dark);
+  --color-dark: var(--dark);
+  --color-carbon: var(--carbon);
+  --color-obsidian: var(--obsidian);
+  --color-cream: var(--cream);
+  --color-beige: var(--beige);
+  --color-grey2: var(--grey);
+  --color-line: var(--line);
+  --color-linedark: var(--line-dark);
+  --color-darkbar: var(--dark-bar);
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-display-serif), Georgia, serif;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: var(--dark);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark body {
+  background: var(--carbon);
+  color: #f8fafc;
+}
+
+.font-editorial {
+  font-family: var(--font-display-serif), Georgia, serif;
+}
+
+/* Red eyebrow label (OUR SERVICES etc.) */
+.section-badge {
+  display: inline-block;
+  color: var(--brand-red);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Divider line between badge and heading */
+.badge-line {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--brand-red);
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+/* Card in the DN style */
+.dn-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(15, 17, 23, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.dn-card:hover {
+  box-shadow: 0 14px 34px rgba(15, 17, 23, 0.08);
+  border-color: rgba(227, 24, 55, 0.3);
+}
+
+/* Mahindra-style High-Tech Obsidian Card */
+.card-dark {
+  background: linear-gradient(180deg, #161a25 0%, #0e1017 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.card-dark:hover {
+  border-color: rgba(227, 24, 55, 0.5);
+  box-shadow: 0 20px 40px -15px rgba(227, 24, 55, 0.2), 0 0 0 1px rgba(227, 24, 55, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Crimson glow button */
+.btn-mahindra-red {
+  background: linear-gradient(135deg, #e31837 0%, #b8122c 100%);
+  box-shadow: 0 8px 24px -4px rgba(227, 24, 55, 0.45);
+  transition: all 0.25s ease;
+}
+
+.btn-mahindra-red:hover {
+  background: linear-gradient(135deg, #ff2647 0%, #d11231 100%);
+  box-shadow: 0 12px 30px -4px rgba(227, 24, 55, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Beige editorial panel with subtle paper texture feel */
+.editorial-panel {
+  background:
+    radial-gradient(ellipse at 20% 110%, rgba(23, 23, 23, 0.12) 0%, transparent 55%),
+    linear-gradient(120deg, #d9b995 0%, var(--beige) 45%, #b38960000 60%),
+    var(--beige);
+  background-color: #c19a72;
+}
+
+/* Diagonal red ribbon accent (mockup red sweep) */
+.ribbon-slash {
+  position: relative;
+  overflow: hidden;
+}
+.ribbon-slash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 46%, #ffffff14 47%, #ffffff55 50%, transparent 54%);
+  transform: translateX(-60%);
+  pointer-events: none;
+}
+
+/* Hide scrollbars on horizontal strips */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Snapshot-style horizontal carousels */
+.snap-strip {
+  scroll-snap-type: x mandatory;
+}
+.snap-strip > * {
+  scroll-snap-align: start;
+}
+
+/* Visible focus states */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--brand-red);
+  outline-offset: 2px;
+}
+
+/* Reduced motion: honour user preference globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

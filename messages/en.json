@@ -1,0 +1,530 @@
+{
+  "site": {
+    "name": "DN Mobiles",
+    "subtitle": "Mobile Repairs · Port Augusta",
+    "tagline": "Get Your Phone Fixed Today"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Repair Services",
+    "packages": "Packages",
+    "gallery": "Gallery",
+    "testimonials": "Testimonials",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "bookNow": "Book a Repair",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "quote": "Get a Quote",
+    "menu": "Menu"
+  },
+  "rail": {
+    "book": "Book",
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "facetime": "FaceTime",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "snapchat": "Snapchat",
+    "sms": "SMS / Text",
+    "quote": "Quote",
+    "location": "Location"
+  },
+  "strip": {
+    "screen": "Screen Repair",
+    "battery": "Battery Replacement",
+    "ipad": "iPad Repair",
+    "refurb": "Refurbished Phones",
+    "other": "Other Repairs"
+  },
+  "hero": {
+    "scroll": "Scroll",
+    "imageAlt": "DN Mobiles — Phone repairs in Port Augusta",
+    "slides": [
+      {
+        "eyebrow": "Phones · Tablets · iPads · And More",
+        "titleA": "Your Device.",
+        "titleB": "Your Story.",
+        "desc": "Expert phone, iPad and tablet repairs in Port Augusta. Free inspection and diagnostics.",
+        "cta1": "Book a Repair",
+        "cta2": "Get a Quote",
+        "href1": "#contact",
+        "href2": "#contact",
+        "img": "/hero-phone.jpg"
+      },
+      {
+        "eyebrow": "Phones · Tablets · iPads · And More",
+        "titleA": "Expert Care for",
+        "titleB": "Every Device.",
+        "desc": "Screen replacement, battery replacement, back glass repairs — for iPhone, Samsung, iPad and more.",
+        "cta1": "Explore Repair Services",
+        "cta2": "Get a Quote",
+        "href1": "#services",
+        "href2": "#contact",
+        "img": "/repair-2.jpg"
+      },
+      {
+        "eyebrow": "Simple · Transparent · Fair",
+        "titleA": "Repair Care,",
+        "titleB": "Made Simple.",
+        "desc": "Free inspection first, an honest quote second, and a careful repair you can rely on.",
+        "cta1": "How It Works",
+        "cta2": "Get a Quote",
+        "href1": "#process",
+        "href2": "#contact",
+        "img": "/repair-3.jpg"
+      },
+      {
+        "eyebrow": "Tested · Serviced · Ready to Go",
+        "titleA": "Quality Devices.",
+        "titleB": "Great Value.",
+        "desc": "Refurbished phones professionally serviced in-house — new-device feel without the new-device price.",
+        "cta1": "Enquire Now",
+        "cta2": "View All Services",
+        "href1": "#refurbished",
+        "href2": "#services",
+        "img": "/repair-5.jpg"
+      }
+    ],
+    "chips": [
+      { "title": "Expert Repairs", "sub": "Phones, iPad & Tablets", "img": "/repair-1.jpg" },
+      { "title": "Free Inspection", "sub": "Know the issue before you repair", "img": "/repair-3.jpg" },
+      { "title": "Quality Parts", "sub": "Built to last", "img": "/repair-7.jpg" },
+      { "title": "Fast Turnaround", "sub": "Get back to what you love", "img": "/repair-5.jpg" }
+    ]
+  },
+  "about": {
+    "badge": "About Us",
+    "heading": "DN Mobiles — Port Augusta's Local Phone Repair Shop",
+    "description": "DN Mobiles is a trusted local mobile repair shop serving Port Augusta and the surrounding South Australian community. We fix phones, iPads and tablets with quality parts, honest pricing and quick turnaround.",
+    "paragraph1": "From cracked screens and worn-out batteries to back glass damage — we handle mobile repairs for all major brands, including iPhone, Samsung, Google and more. Every device gets a free inspection before any work begins, so you know exactly what's wrong and what it will cost.",
+    "paragraph2": "Looking for an affordable phone that works like new? Ask about our refurbished phones — tested, repaired and professionally serviced in-house.",
+    "techName": "Naveen",
+    "techTitle": "Owner & Lead Technician",
+    "techDesc": "Screen replacement, back glass replacement, battery replacement, iPad repair, tablet repair and refurbished phone servicing for all major brands.",
+    "why_heading": "Why Locals Choose DN Mobiles",
+    "imageAlt": "DN Mobiles repair workspace",
+    "imageCaption": "Professional phone repairs — Port Augusta, SA",
+    "cta": "Get Your Phone Fixed Today",
+    "features": [
+      {
+        "icon": "🔧",
+        "title": "All Repairs In-House",
+        "desc": "Screen, back glass, battery, iPad and tablet repairs done professionally in-store."
+      },
+      {
+        "icon": "🔍",
+        "title": "Free Inspection",
+        "desc": "Every device gets a free inspection & diagnostics — no obligation, no hidden fees."
+      },
+      {
+        "icon": "🛡️",
+        "title": "Quality Parts",
+        "desc": "Quality replacement parts suited to your device and budget."
+      },
+      {
+        "icon": "⚡",
+        "title": "Same-Day Service",
+        "desc": "Most screen and battery repairs are completed the same day."
+      },
+      {
+        "icon": "🚚",
+        "title": "Free Pickup & Drop-off",
+        "desc": "We collect and deliver your device free within Port Augusta."
+      },
+      {
+        "icon": "💰",
+        "title": "Affordable Prices",
+        "desc": "Fair, transparent pricing for your mobile phone repairs."
+      },
+      {
+        "icon": "📱",
+        "title": "Refurbished Phones",
+        "desc": "Quality refurbished phones professionally serviced and ready to use."
+      }
+    ]
+  },
+  "services": {
+    "badge": "Our Services",
+    "heading": "Repair Care,",
+    "headingAccent": "Made Simple.",
+    "subheading": "Professional repairs for phones, iPads and tablets with a focus on quality and care. Free inspection & diagnostics included with every service.",
+    "viewAll": "View All Services",
+    "durationLabel": "Turnaround:",
+    "priceLabel": "Price:",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "items": [
+      {
+        "icon": "📱",
+        "name": "Screen Replacement",
+        "duration": "Same Day",
+        "price": "From $99",
+        "desc": "Get your display back to perfect. Cracked or unresponsive screens replaced with quality parts for iPhone, Samsung, Google Pixel and other major brands."
+      },
+      {
+        "icon": "🔋",
+        "name": "Battery Replacement",
+        "duration": "Same Day",
+        "price": "From $99",
+        "desc": "Reliable power, longer usage. Worn batteries replaced with quality cells so your phone lasts all day again."
+      },
+      {
+        "icon": "📲",
+        "name": "iPad Repair",
+        "duration": "Same Day*",
+        "price": "From $199",
+        "desc": "Expert repairs for all iPad models — cracked screens, batteries and charging issues fixed with care."
+      },
+      {
+        "icon": "🛒",
+        "name": "Refurbished Phones",
+        "duration": "In Stock Now",
+        "price": "From $149",
+        "desc": "Quality devices at great value. Refurbished phones professionally serviced, tested and ready to go."
+      },
+      {
+        "icon": "🔧",
+        "name": "Back Glass Replacement",
+        "duration": "Same Day",
+        "price": "From $199",
+        "desc": "Smashed back glass replaced quickly and professionally, restoring the look and feel of your phone."
+      },
+      {
+        "icon": "💻",
+        "name": "Tablet Repair",
+        "duration": "Same Day*",
+        "price": "From $199",
+        "desc": "Samsung Galaxy Tab, Lenovo and other tablet repairs — screens, batteries, charging ports and more."
+      },
+      {
+        "icon": "🛠️",
+        "name": "Professional Service & Diagnostics",
+        "duration": "Free",
+        "price": "FREE Inspection",
+        "desc": "Not sure what's wrong with your device? Bring it in — our free inspection & diagnostics identify the fault before any work or cost starts."
+      }
+    ],
+    "viewDetails": "Details & Booking"
+  },
+  "packages": {
+    "badge": "Packages",
+    "heading": "Choose Your Repair Service Level",
+    "subheading": "Transparent pricing with everything included. No hidden costs.",
+    "popular": "Most Popular",
+    "btn": "Book Now",
+    "bookPrefix": "I want to book the",
+    "items": [
+      {
+        "name": "Basic Repair",
+        "price": "from $49",
+        "desc": "Single repair for your phone with quality parts and free diagnostics.",
+        "popular": false,
+        "features": [
+          "Free Inspection & Diagnostics",
+          "Quality Replacement Part",
+          "Functionality Testing",
+          "WhatsApp Support",
+          "Repair Confirmation"
+        ],
+        "missing": []
+      },
+      {
+        "name": "Standard Repair",
+        "price": "from $99",
+        "desc": "Complete repair experience with screen + battery combo and testing coverage.",
+        "popular": true,
+        "features": [
+          "Everything in Basic",
+          "Screen + Battery Combo",
+          "Full Device Testing",
+          "Camera & Sensors Check",
+          "Charging Port Clean",
+          "⭐ Most Booked Package"
+        ],
+        "missing": []
+      },
+      {
+        "name": "Premium Repair",
+        "price": "Contact us",
+        "desc": "Multiple repairs and extras — best for iPads, tablets and multiple issues.",
+        "popular": false,
+        "features": [
+          "Everything in Standard",
+          "Multiple Repairs (Screen, Battery, Back Glass, etc.)",
+          "Data Back-up Assistance",
+          "Priority WhatsApp Support",
+          "Personal Advice on Future Care"
+        ],
+        "missing": []
+      }
+    ]
+  },
+  "whyus": {
+    "badge": "Our Approach",
+    "headingA": "Expert Technicians.",
+    "headingB": "Trusted Process.",
+    "desc": "From inspection to handover, we follow a simple and transparent process to keep your device in safe hands.",
+    "cta": "Watch Our Process",
+    "imageAlt": "Technician performing a repair at DN Mobiles",
+    "checklist": [
+      {
+        "title": "Free Inspection & Diagnostics",
+        "sub": "No-obligation check before any repair."
+      },
+      {
+        "title": "Quality Parts & Quality Service",
+        "sub": "Reliable parts and careful workmanship."
+      },
+      {
+        "title": "Affordable Pricing",
+        "sub": "Fair and transparent quotes."
+      },
+      {
+        "title": "Wide Range of Devices",
+        "sub": "iPhone, Samsung, iPad, tablets and more."
+      }
+    ]
+  },
+  "process": {
+    "badge": "Booking Process",
+    "heading": "How It Works",
+    "subheading": "Simple 6-step process to get your phone, iPad or tablet repaired in Port Augusta.",
+    "cta": "Book a Repair",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Book Free Inspection",
+        "desc": "Call or WhatsApp us to bring in your phone — the first inspection is always free.",
+        "icon": "📅"
+      },
+      {
+        "num": "02",
+        "title": "Free Inspection",
+        "desc": "We diagnose the fault on the spot and explain exactly what's wrong.",
+        "icon": "🔍"
+      },
+      {
+        "num": "03",
+        "title": "Get Quote",
+        "desc": "You get an honest, affordable quote before any work begins — no obligation.",
+        "icon": "💰"
+      },
+      {
+        "num": "04",
+        "title": "Approve Repair",
+        "desc": "Say go — we start the repair with quality replacement parts.",
+        "icon": "✅"
+      },
+      {
+        "num": "05",
+        "title": "Repair Done",
+        "desc": "Work is completed, tested, and quality-checked before handover.",
+        "icon": "🛠️"
+      },
+      {
+        "num": "06",
+        "title": "Pick Up Happy",
+        "desc": "Collect your device working like new — most screen repairs are same day.",
+        "icon": "📱"
+      }
+    ]
+  },
+  "gallery": {
+    "badge": "Recent Repairs",
+    "heading": "Real Repairs.",
+    "headingAccent": "Real Results.",
+    "subheading": "A look at the devices and repairs we handle every day at DN Mobiles.",
+    "viewAll": "View Our Gallery",
+    "tabs": ["All", "Screens", "Tablets", "Back Glass"],
+    "btn_more": "View More Photos",
+    "images": [
+      { "src": "/repair-1.jpg", "alt": "Screen replacement in progress", "tab": "screens", "size": "tall" },
+      { "src": "/repair-2.jpg", "alt": "iPad repair at the bench", "tab": "tablets", "size": "normal" },
+      { "src": "/repair-3.jpg", "alt": "Battery replacement work", "tab": "screens", "size": "normal" },
+      { "src": "/repair-4.jpg", "alt": "Back glass replacement", "tab": "backglass", "size": "normal" },
+      { "src": "/repair-5.jpg", "alt": "Samsung device serviced", "tab": "screens", "size": "normal" },
+      { "src": "/repair-6.jpg", "alt": "Tablet repair work in progress", "tab": "tablets", "size": "normal" },
+      { "src": "/repair-7.jpg", "alt": "iPhone screen replaced — like new", "tab": "screens", "size": "normal" },
+      { "src": "/repair-8.jpg", "alt": "Device diagnostics and testing", "tab": "screens", "size": "normal" }
+    ]
+  },
+  "refurbished": {
+    "badge": "Refurbished Phones",
+    "heading": "Quality Devices.",
+    "headingAccent": "Great Value.",
+    "subheading": "Reliable refurbished phones at affordable prices — professionally serviced in-house.",
+    "priceNote": "Refurbished phones from $149",
+    "stockNote": "Stock changes regularly — contact us for what's available today.",
+    "cta": "Enquire Now",
+    "bannerTitle": "Looking for a specific device?",
+    "bannerSub": "Get in touch for the latest stock and best prices.",
+    "bannerCta": "Enquire Now",
+    "cards": [
+      { "name": "iPhone (Refurbished)", "img": "/repair-7.jpg" },
+      { "name": "Samsung Galaxy (Refurbished)", "img": "/repair-5.jpg" },
+      { "name": "Google Pixel (Refurbished)", "img": "/repair-3.jpg" },
+      { "name": "iPad (Refurbished)", "img": "/repair-2.jpg" }
+    ]
+  },
+  "testimonials": {
+    "badge": "Customer Reviews",
+    "heading": "Trusted by Our Customers.",
+    "subheading": "Real reviews from the Port Augusta community.",
+    "ratingSummary": "5.0/5",
+    "ratingBase": "based on Facebook reviews",
+    "reviewCta": "Leave a Review",
+    "reviewUrl": "https://www.facebook.com/share/1cuNsdpSxT/?mibextid=wwXIfr",
+    "cta": "Book a Repair",
+    "items": [
+      {
+        "name": "Kara Louise",
+        "city": "Port Augusta",
+        "rating": 5,
+        "text": "I can't recommend DN Mobiles enough! He's helped me out multiple times with my phone, always with great prices and such quick, reliable service. Beyond being skilled and affordable, he's just a genuinely lovely person — patient, kind, and always willing to explain things clearly."
+      },
+      {
+        "name": "Hayley Mills",
+        "city": "Port Augusta",
+        "rating": 5,
+        "text": "Rave to DN Mobiles for my iPhone battery repair, couldn't be happier with the service and knowing it's a genuine battery!"
+      },
+      {
+        "name": "Stacey-Lee Parkinson",
+        "city": "Port Augusta",
+        "rating": 5,
+        "text": "Repaired my iPhone within 20 mins with a new screen. Great service. Highly recommend :)"
+      },
+      {
+        "name": "Hayden Smyth",
+        "city": "Port Augusta",
+        "rating": 5,
+        "text": "Stoked with the service. Parts didn't arrive on time so he put in the extra effort and travelled to Port Pirie to get the parts. Can't recommend enough."
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "heading": "Frequently Asked Questions.",
+    "subheading": "Find answers to common questions about our repair services.",
+    "viewAll": "View All FAQs",
+    "stillQuestions": "Still have questions?",
+    "call": "Call Us",
+    "whatsapp": "WhatsApp Us",
+    "items": [
+      { "q": "How can I book a repair?", "a": "You can call us at 0420 655 514, email dnmobilerepairspa@gmail.com, send a WhatsApp message, or use the booking form on this website. We also take walk-ins during opening hours." },
+      { "q": "Is the inspection really free?", "a": "Yes! Every device brought in gets a completely free inspection & diagnostics — no hidden fees. We tell you exactly what's wrong and what it will cost before any work begins." },
+      { "q": "Can I get a quote before the repair?", "a": "Absolutely. After the free inspection you receive an honest, itemised quote before any work begins — no obligation to proceed." },
+      { "q": "How long does a screen replacement take?", "a": "Most screen repairs are completed the same day, often much faster. iPad and tablet repairs typically take 1–2 days depending on parts availability. Contact us for an exact estimate." },
+      { "q": "Which devices do you repair?", "a": "We repair all major phone brands including iPhone, Samsung, Google Pixel, Oppo and more, as well as iPads and popular tablets like Samsung Galaxy Tab." },
+      { "q": "What a typical repair takes and how it works — what is the process?", "a": "Book a free inspection → we diagnose the fault → you approve the quote → we repair with quality parts → we test everything → you collect your device. It's that simple." },
+      { "q": "Do you use quality parts?", "a": "We use quality replacement parts suited to your device and budget. Options may be discussed during your free inspection." },
+      { "q": "What payment methods are accepted?", "a": "We accept cash, bank transfer and PayID. Contact us if you'd like to arrange a specific payment option." },
+      { "q": "Do I need an appointment?", "a": "Both walk-ins and appointments are welcome — whatever suits you. Walk-ins get free diagnostics on the spot; booking ahead means a technician is ready when you arrive." },
+      { "q": "Do you sell refurbished phones?", "a": "Yes! We stock quality refurbished phones that have been professionally serviced and tested. Contact us to see what's currently available." },
+      { "q": "How much do repairs cost?", "a": "Pricing depends on the device brand and model — exact prices are always confirmed after your free inspection. As a guide, screen replacements start from $99, battery replacements from $99, back glass from $199, and iPad/tablet repairs from $199. You'll always get an exact quote before any work begins." },
+      { "q": "Is there a warranty on repairs?", "a": "Yes — we provide a warranty on our repairs. The exact coverage depends on the repair type and part used, and we'll confirm the details with you when you book." },
+      { "q": "Do you fix water-damaged phones?", "a": "Bring your device in for a free inspection — we'll assess the damage and let you know what's possible before any cost." },
+      { "q": "Can you recover my data?", "a": "In many cases yes. Back up beforehand if possible — we can help during the repair. Data recovery success depends on the damage." },
+      { "q": "Do you offer mail-in repairs?", "a": "Yes! We happily accept mail-in repairs from outside Port Augusta. Message us on WhatsApp or call 0420 655 514 and we'll arrange postage details." },
+      { "q": "Where are you located?", "a": "DN Mobiles is located at 18 Domeyer Court, Port Augusta SA 5700. Call 0420 655 514 for directions." },
+      { "q": "What are your opening hours?", "a": "We're open 7 days a week, 8 AM to 8 PM — only closed on some public holidays. Call or message us to confirm before you visit." },
+      { "q": "Can I get accessories too?", "a": "Yes — cases, screen protectors, chargers and more. Ask in store." },
+      { "q": "My phone won't turn on — what do I do?", "a": "Bring it in for a free inspection. Common causes include battery or charging problems — most are fixable affordably." },
+      { "q": "Do you repair devices still under manufacturer warranty?", "a": "Some third-party repairs may affect your manufacturer warranty. We'll always advise you first during the free inspection." },
+      { "q": "Do you offer pickup and delivery?", "a": "Yes — free pickup and drop-off within Port Augusta. Message us to schedule a collection that suits you." },
+      { "q": "Can I repair my tablet or iPad too?", "a": "Absolutely — we repair iPads and all popular tablets, including screens, batteries and charging issues. All brands welcome." }
+    ]
+  },
+  "contact": {
+    "badge": "Contact & Booking",
+    "heading": "Let's Get Your Device Working Again.",
+    "subheading": "Get in touch to book your phone, iPad or tablet repair at DN Mobiles, Port Augusta. Free inspection on every device.",
+    "info_heading": "Contact Information",
+    "info_location": "Location",
+    "info_address": "18 Domeyer Court, Port Augusta SA 5700, South Australia",
+    "info_phone": "Phone",
+    "info_whatsapp": "WhatsApp",
+    "info_email": "Email",
+    "info_hours": "Opening Hours",
+    "info_hours_val": "Open 7 Days · 8:00 AM – 8:00 PM",
+    "info_open": "Walk-ins & appointments · Free inspection · Public holidays occasionally open",
+    "directions": "Get Directions",
+    "btn_whatsapp": "Chat on WhatsApp",
+    "btn_call": "Call Now",
+    "form_heading": "Book Your Repair",
+    "form_note": "✔ Free Inspection & Diagnostics · ✔ Same-Day Service · ✔ Free Pickup & Drop-off in Port Augusta · ✔ No Hidden Fees",
+    "tab_book": "Book a Repair",
+    "tab_quote": "Get a Free Quote",
+    "tab_quote_note": "Prefer a price first? Send a quote request — we'll reply on WhatsApp with an estimate before you book.",
+    "label_device": "Device Brand & Model *",
+    "label_time": "Preferred Time",
+    "quote_photos_hint": "Open a photo of the damage? You can attach photos directly in the WhatsApp chat after sending.",
+    "quote_btn": "Request Quote via WhatsApp",
+    "quoteTitle": "💰 Free Quote Request",
+    "label_name": "Your Name *",
+    "label_phone": "Mobile Number *",
+    "label_email": "Email (Optional)",
+    "label_service": "Select Service *",
+    "label_date": "Preferred Date",
+    "label_msg": "Describe the issue (optional)",
+    "btn_submit": "Send Booking via WhatsApp",
+    "placeholder_service": "Select a Service",
+    "bookingTitle": "📱 Device Repair Request",
+    "mapTitle": "DN Mobiles Location — 18 Domeyer Court, Port Augusta",
+    "serviceOptions": [
+      "Screen Replacement",
+      "Back Glass Replacement",
+      "Battery Replacement",
+      "iPad Repair",
+      "Tablet Repair",
+      "Refurbished Phone Enquiry",
+      "Professional Service / Other Issue",
+      "Other / Not sure — Free Inspection"
+    ]
+  },
+  "footer": {
+    "tagline": "Professional phone, iPad and tablet repairs with a focus on quality, care and customer satisfaction.",
+    "col_about": "About Us",
+    "col_services": "Repair Services",
+    "col_packages": "Packages",
+    "col_support": "Support",
+    "col_contact": "Contact",
+    "about": [
+      { "label": "Our Story", "href": "#about" },
+      { "label": "Why Choose Us", "href": "#about" },
+      { "label": "Our Gallery", "href": "#gallery" },
+      { "label": "Customer Reviews", "href": "#testimonials" }
+    ],
+    "services": [
+      { "label": "Screen Replacement", "href": "/services/screen-replacement" },
+      { "label": "Battery Replacement", "href": "/services/battery-replacement" },
+      { "label": "Back Glass Replacement", "href": "/services/back-glass-replacement" },
+      { "label": "iPad Repair", "href": "/services/ipad-repair" },
+      { "label": "Tablet Repair", "href": "/services/tablet-repair" },
+      { "label": "Other Repairs", "href": "#services" }
+    ],
+    "packages": [
+      { "label": "Repair Packages", "href": "#packages" },
+      { "label": "Refurbished Phones", "href": "#refurbished" }
+    ],
+    "support": [
+      { "label": "FAQs", "href": "#faq" },
+      { "label": "Contact Us", "href": "#contact" },
+      { "label": "Book a Repair", "href": "#contact" },
+      { "label": "Get a Quote", "href": "#contact" }
+    ],
+    "hours": "Open 7 Days · 8:00 AM – 8:00 PM",
+    "legal": "Legal",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "sitemap": "Sitemap",
+    "copyright": "Copyright © 2026 DN Mobiles. All Rights Reserved."
+  },
+  "whatsapp": {
+    "label": "Chat on WhatsApp",
+    "message": "Hi! I'd like to get my phone repaired at DN Mobiles."
+  }
+}

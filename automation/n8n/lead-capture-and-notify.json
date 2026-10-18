@@ -1,0 +1,104 @@
+{
+  "name": "Lead Capture → Google Sheets → WhatsApp Notify",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead",
+        "responseMode": "onReceived",
+        "responseData": "allEntries",
+        "options": {}
+      },
+      "id": "webhook-lead",
+      "name": "Lead Webhook (from booking form)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [0, 0],
+      "webhookId": "lead-webhook-pandit-001"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "REPLACE_WITH_GOOGLE_SHEET_ID"
+        },
+        "sheetName": "Leads",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Timestamp": "={{ $now.toISO() }}",
+            "Name": "={{ $json.body.name ?? '' }}",
+            "Phone": "={{ $json.body.phone ?? '' }}",
+            "PoojaType": "={{ $json.body.pooja ?? '' }}",
+            "Temple": "={{ $json.body.temple ?? '' }}",
+            "Date": "={{ $json.body.date ?? '' }}",
+            "Source": "={{ $json.body.source ?? 'form' }}",
+            "Status": "New"
+          }
+        }
+      },
+      "id": "sheets-append",
+      "name": "Append Lead to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [260, 0]
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "resource": "message",
+        "phoneNumberField": "to",
+        "message": {
+          "content": "={{ 'New lead: ' + ($json.body.name ?? '?') + ' | ' + ($json.body.pooja ?? '?') + ' | ' + ($json.body.phone ?? '?') + ' | date ' + ($json.body.date ?? '?') }}"
+        }
+      },
+      "id": "wa-notify",
+      "name": "WhatsApp Notify (to Pt. Abhishek)",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [520, 0]
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "resource": "message",
+        "phoneNumberField": "to",
+        "message": {
+          "content": "={{ 'Namaste ' + ($json.body.name ?? '') + '! 🙏 We received your request for ' + ($json.body.pooja ?? 'the puja') + '. Pt. Abhishek Vyas will contact you shortly. — Mahakal Pooja Services' }}"
+        }
+      },
+      "id": "wa-autoreply",
+      "name": "WhatsApp Auto-Reply (to lead)",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [520, 260]
+    }
+  ],
+  "connections": {
+    "Lead Webhook (from booking form)": {
+      "main": [
+        [
+          { "node": "Append Lead to Google Sheets", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Append Lead to Google Sheets": {
+      "main": [
+        [
+          { "node": "WhatsApp Notify (to Pt. Abhishek)", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "WhatsApp Notify (to Pt. Abhishek)": {
+      "main": [
+        [
+          { "node": "WhatsApp Auto-Reply (to lead)", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "active": false
+}

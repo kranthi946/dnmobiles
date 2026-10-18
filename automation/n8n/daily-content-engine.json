@@ -1,0 +1,130 @@
+{
+  "name": "Daily Content Engine — publish one article every day",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "days", "hoursInterval": 24 }]
+        }
+      },
+      "id": "schedule-6am",
+      "name": "Daily 6 AM",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// One topic per pooja offered on the site — rotates daily (see topic-calendar.csv for the full 52-day list).\nconst calendar = [\n  { \"topic\": \"Mangal Dosh Puja significance and benefits\", \"keyword\": \"mangal dosh puja benefits\", \"cta\": \"Mangal Dosh Puja\" },\n  { \"topic\": \"Kaal Sarp Dosh Puja cost in Ujjain\", \"keyword\": \"kaal sarp dosh puja cost ujjain\", \"cta\": \"Kaal Sarp Dosh Puja\" },\n  { \"topic\": \"Rudrabhishek benefits for devotees\", \"keyword\": \"rudrabhishek benefits\", \"cta\": \"Rudrabhishek\" },\n  { \"topic\": \"Mahamrityunjay Jaap benefits for health and peace\", \"keyword\": \"mahamrityunjay jaap benefits\", \"cta\": \"Mahamrityunjay Jaap\" },\n  { \"topic\": \"Navgrah Shanti Puja significance and benefits\", \"keyword\": \"navgrah shanti puja benefits\", \"cta\": \"Navgrah Shanti Puja\" },\n  { \"topic\": \"Pitra Dosh Shanti remedies and shanti pooja details\", \"keyword\": \"pitra dosh shanti benefits\", \"cta\": \"Pitru Dosh Shanti\" },\n  { \"topic\": \"Ark Vivah what it is and its importance\", \"keyword\": \"ark vivah significance\", \"cta\": \"Ark Vivah\" },\n  { \"topic\": \"Kumbh Vivah what it is and its importance\", \"keyword\": \"kumbh vivah significance\", \"cta\": \"Kumbh Vivah\" },\n  { \"topic\": \"Narayan Bali significance and when to perform\", \"keyword\": \"narayan bali significance\", \"cta\": \"Narayan Bali\" },\n  { \"topic\": \"Nag Bali significance and benefits\", \"keyword\": \"nag bali pooja benefits\", \"cta\": \"Nag Bali\" },\n  { \"topic\": \"Vastu Puja significance and benefits\", \"keyword\": \"vastu puja benefits\", \"cta\": \"Vastu Puja\" },\n  { \"topic\": \"Durga Saptashati Path significance and benefits\", \"keyword\": \"durga saptashati path benefits\", \"cta\": \"Durga Saptashati Path\" }\n];\nconst dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);\nconst pick = calendar[dayOfYear % calendar.length];\nreturn [{ json: {\n  topic: pick.topic,\n  keyword: pick.keyword,\n  cta: pick.cta,\n  date: new Date().toISOString().slice(0, 10),\n  slugBase: pick.topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')\n} }];"
+      },
+      "id": "code-topic",
+      "name": "Pick Today's Topic (12 poojas)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [260, 0]
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "operation": "message",
+        "modelId": "gpt-4o-mini",
+        "messages": {
+          "values": [
+            {
+              "role": "system",
+              "content": "You write devotional SEO articles for Mahakal Pooja Services (panditabhishekvyas.in), a pooja booking service at Mangalnath & Mahakal Temple, Ujjain. Every pooja is performed personally by Pt. Abhishek Vyas (Acharya), an experienced Vedic Pandit at Mangalnath Temple & Mahakal Temple, Ujjain — 100% private puja, direct pandit booking, no agents, with a pooja certificate and photos/videos after the ritual. Rules: 800-1200 words; one clear H1 with the keyword; 4-6 H2 sections; factual and respectful, no invented rituals, no medical/legal claims; mention Pt. Abhishek Vyas naturally in the first two paragraphs and once more near the end; end with an FAQ (3 questions) and a soft CTA to book the relevant pooja via WhatsApp. Return ONLY valid JSON: {\"title\": string, \"description\": string (140-155 chars), \"keywords\": [string], \"body\": string (markdown starting with an H2, no H1), \"faq\": [{\"q\": string, \"a\": string}]}."
+            },
+            {
+              "role": "user",
+              "content": "Topic: {{ $json.topic }}. Primary keyword: {{ $json.keyword }}. CTA pooja: {{ $json.cta }}. Today's date: {{ $json.date }}. Include an internal link to https://www.panditabhishekvyas.in/#poojas and one to /#contact in the body."
+            }
+          ]
+        }
+      },
+      "id": "openai-generate",
+      "name": "Generate Article (OpenAI)",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [520, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Assemble markdown (with priest author box) + Article JSON-LD from the AI response.\nconst ai = typeof $json.content === 'string' ? JSON.parse($json.content) : $json;\nconst siteUrl = 'https://www.panditabhishekvyas.in';\nconst slug = $('Pick Today\\'s Topic (12 poojas)').item.json.slugBase + '-' + $('Pick Today\\'s Topic (12 poojas)').item.json.date;\nconst date = $('Pick Today\\'s Topic (12 poojas)').item.json.date;\nconst faqBlock = ai.faq.map(f => `### ${f.q}\\n\\n${f.a}`).join('\\n\\n');\nconst cta = `---\\n\\n## Book Your Pooja\\n\\nBook ${ai.title} at Mangalnath / Mahakal Temple, Ujjain with Pt. Abhishek Vyas — 100% private puja, no agents. [Book on WhatsApp](https://wa.me/916260552014?text=${encodeURIComponent('Namaste! I want to book: ' + ai.title)}) or see all [pooja services](https://www.panditabhishekvyas.in/#poojas).`;\nconst priest = `---\\n\\n## About Your Acharya — Pt. Abhishek Vyas\\n\\nEvery pooja is performed personally by **Pt. Abhishek Vyas** (Acharya), an experienced Vedic Pandit at **Mangalnath Temple & Mahakal Temple, Ujjain**. 100% private puja, direct pandit booking, no agents — with a pooja certificate and photos/videos shared after the ritual.\\n\\n- 📞 Call / WhatsApp: **+91 6260552014**\\n- 📧 Email: abhishekvyas069@gmail.com\\n- 🙏 Book online: [All Pooja Services](https://www.panditabhishekvyas.in/#poojas)`;\nconst frontmatter = `---\\ntitle: \"${ai.title}\"\\ndescription: \"${ai.description}\"\\ndate: \"${date}\"\\nkeywords: [${ai.keywords.map(k => `\"${k}\"`).join(', ')}]\\nctaPooja: \"${$('Pick Today\\'s Topic (12 poojas)').item.json.cta}\"\\n---\\n\\n`;\nconst markdown = frontmatter + ai.body + '\\n\\n' + faqBlock + '\\n\\n' + cta + '\\n\\n' + priest + '\\n';\nconst articleJsonLd = {\n  '@context': 'https://schema.org',\n  '@type': 'Article',\n  headline: ai.title,\n  description: ai.description,\n  datePublished: date,\n  author: { '@type': 'Person', name: 'Pt. Abhishek Vyas' },\n  publisher: { '@type': 'Organization', name: 'Mahakal Pooja Services', url: siteUrl }\n};\nreturn [{ json: {\n  markdown,\n  articleJsonLd: JSON.stringify(articleJsonLd),\n  slug,\n  title: ai.title,\n  description: ai.description,\n  url: `${siteUrl}/blog/${slug}`\n} }];"
+      },
+      "id": "code-assemble",
+      "name": "Assemble Markdown + JSON-LD",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [780, 0]
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "create",
+        "repository": {
+          "__rl": true,
+          "mode": "uri",
+          "value": "REPLACE_WITH_OWNER/REPO"
+        },
+        "path": "={{ 'content/blog/' + $json.slug + '.md' }}",
+        "content": "={{ $('Code').item.json.base64 }}",
+        "commitMessage": "={{ 'content: publish ' + $json.title }}"
+      },
+      "id": "github-create",
+      "name": "Commit Article to GitHub",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [1040, 0]
+    },
+    {
+      "parameters": {
+        "url": "REPLACE_WITH_VERCEL_DEPLOY_HOOK",
+        "method": "POST",
+        "sendBody": true,
+        "options": {}
+      },
+      "id": "vercel-deploy",
+      "name": "Trigger Vercel Deploy",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1300, 0]
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "resource": "message",
+        "phoneNumberField": "to",
+        "message": {
+          "content": "={{ '✅ Article published: ' + $json.title + ' → ' + $('Code').item.json.url }}"
+        }
+      },
+      "id": "wa-published",
+      "name": "WhatsApp: Published!",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [1560, 0]
+    }
+  ],
+  "connections": {
+    "Daily 6 AM": {
+      "main": [[{ "node": "Pick Today's Topic (12 poojas)", "type": "main", "index": 0 }]]
+    },
+    "Pick Today's Topic (12 poojas)": {
+      "main": [[{ "node": "Generate Article (OpenAI)", "type": "main", "index": 0 }]]
+    },
+    "Generate Article (OpenAI)": {
+      "main": [[{ "node": "Assemble Markdown + JSON-LD", "type": "main", "index": 0 }]]
+    },
+    "Assemble Markdown + JSON-LD": {
+      "main": [[{ "node": "Commit Article to GitHub", "type": "main", "index": 0 }]]
+    },
+    "Commit Article to GitHub": {
+      "main": [[{ "node": "Trigger Vercel Deploy", "type": "main", "index": 0 }]]
+    },
+    "Trigger Vercel Deploy": {
+      "main": [[{ "node": "WhatsApp: Published!", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "active": false
+}

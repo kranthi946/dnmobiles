@@ -1,0 +1,46 @@
+# Daily article publishing for panditabhishekvyas.in (zero-infra alternative to n8n).
+# Runs at 01:30 UTC (07:00 IST) every day: generates one article, commits it,
+# pushes to the repo → Vercel auto-deploys → article is live at /blog/<slug>.
+#
+# Setup (once):
+#   1. Copy this file to .github/workflows/daily-article.yml in the REAL repo.
+#   2. Add repository secret OPENAI_API_KEY (Settings → Secrets and variables → Actions).
+#   3. Copy automation/topics/topic-calendar.csv and automation/scripts/generate_article.mjs
+#      into the repo (paths below are relative to repo root).
+name: Daily Article
+
+on:
+  schedule:
+    - cron: "30 1 * * *" # every day 01:30 UTC
+  workflow_dispatch: {} # manual run button
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate today's article
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node automation/scripts/generate_article.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "daily-article-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add content/blog
+          if git diff --cached --quiet; then
+            echo "No new article today — nothing to commit."
+          else
+            git commit -m "content: daily article $(date +%F)"
+            git push
+          fi
