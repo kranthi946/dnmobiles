@@ -427,8 +427,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-white dark:bg-carbon text-slate-900 dark:text-white pt-24 sm:pt-28 select-none"
-      style={{ minHeight: "calc(100vh - 2rem)" }}
+      className="relative overflow-hidden bg-white dark:bg-carbon text-slate-900 dark:text-white pt-20 sm:pt-24 select-none"
       aria-roledescription="carousel"
       aria-label="DN Mobile Repairs Slider"
       onMouseEnter={() => setPaused(true)}
@@ -454,8 +453,8 @@ export default function Hero() {
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#DD052B]/10 rounded-full blur-[140px] pointer-events-none z-10" />
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[160px] pointer-events-none z-10" />
 
-      {/* Main Slide Stack */}
-      <div className="relative w-full h-[680px] sm:h-[720px] lg:h-[760px] xl:h-[780px]">
+      {/* Main Slide Stack - Compacted height so stats numbers fit comfortably on laptop screens */}
+      <div className="relative w-full h-[550px] sm:h-[580px] lg:h-[610px] xl:h-[630px]">
         {slides.map((slide, i) => (
           <div
             key={i}
@@ -483,14 +482,14 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
 
             {/* Slide Content */}
-            <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between py-6 sm:py-8 lg:py-10">
-              <div className="grid md:grid-cols-12 gap-8 md:gap-8 lg:gap-12 items-center pt-2 sm:pt-4">
+            <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between pt-1 sm:pt-2 pb-2 sm:pb-3">
+              <div className="grid md:grid-cols-12 gap-6 md:gap-8 lg:gap-10 items-center">
                 
                 {/* Left Column (7 cols): Words animate in during Phase 2 */}
                 <div className="md:col-span-7">
                   {/* Live Pill / Date Badge */}
                   <div
-                    className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-white/[0.08] border border-slate-200 dark:border-white/15 backdrop-blur-md text-[11px] font-bold text-slate-800 dark:text-slate-200 mb-4 shadow-sm transition-all duration-500 ease-out transform ${
+                    className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 dark:bg-white/[0.08] border border-slate-200 dark:border-white/15 backdrop-blur-md text-[10px] sm:text-[11px] font-bold text-slate-800 dark:text-slate-200 mb-2 sm:mb-2.5 shadow-sm transition-all duration-500 ease-out transform ${
                       isLeftVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"
                     }`}
                   >
@@ -500,12 +499,12 @@ export default function Hero() {
 
                   {/* Eyebrow with decorative red diagonal slash */}
                   <div
-                    className={`flex items-center gap-2 mb-3 transition-all duration-500 delay-75 ease-out transform ${
+                    className={`flex items-center gap-2 mb-1.5 sm:mb-2 transition-all duration-500 delay-75 ease-out transform ${
                       isLeftVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"
                     }`}
                   >
-                    <span className="w-8 h-1 bg-[#DD052B] -rotate-12 rounded-full inline-block" />
-                    <p className="text-[#DD052B] tracking-[0.2em] text-xs font-black uppercase">
+                    <span className="w-7 h-1 bg-[#DD052B] -rotate-12 rounded-full inline-block" />
+                    <p className="text-[#DD052B] tracking-[0.2em] text-[11px] sm:text-xs font-black uppercase">
                       {slide.eyebrow}
                     </p>
                   </div>
@@ -519,7 +518,7 @@ export default function Hero() {
                       }`}
                     />
                     {i === 0 ? (
-                      <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] font-black text-slate-900 dark:text-white leading-[1.08] tracking-tight uppercase overflow-hidden">
+                      <h1 className="text-2xl sm:text-4xl lg:text-[2.65rem] xl:text-[3.1rem] font-black text-slate-900 dark:text-white leading-[1.05] tracking-tight uppercase overflow-hidden">
                         <span
                           className={`block transition-all duration-600 delay-100 ease-out transform ${
                             isLeftVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -545,7 +544,7 @@ export default function Hero() {
                         )}
                       </h1>
                     ) : (
-                      <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] font-black text-slate-900 dark:text-white leading-[1.08] tracking-tight uppercase overflow-hidden">
+                      <h2 className="text-2xl sm:text-4xl lg:text-[2.65rem] xl:text-[3.1rem] font-black text-slate-900 dark:text-white leading-[1.05] tracking-tight uppercase overflow-hidden">
                         <span
                           className={`block transition-all duration-600 delay-100 ease-out transform ${
                             isLeftVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -574,7 +573,7 @@ export default function Hero() {
                   </div>
 
                   <p
-                    className={`text-slate-700 dark:text-slate-200 text-sm sm:text-base lg:text-lg mt-4 max-w-xl leading-relaxed font-medium transition-all duration-600 delay-400 ease-out transform ${
+                    className={`text-slate-700 dark:text-slate-200 text-xs sm:text-sm lg:text-base mt-2 sm:mt-2.5 max-w-xl leading-relaxed font-medium transition-all duration-600 delay-400 ease-out transform ${
                       isLeftVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                     }`}
                   >
@@ -583,20 +582,20 @@ export default function Hero() {
 
                   {/* Action Buttons */}
                   <div
-                    className={`flex flex-wrap items-center gap-3.5 mt-6 transition-all duration-500 delay-500 ease-out transform ${
+                    className={`flex flex-wrap items-center gap-3 mt-3 sm:mt-4 transition-all duration-500 delay-500 ease-out transform ${
                       isLeftVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-95"
                     }`}
                   >
                     <a
                       href={slide.href1}
-                      className="bg-[#DD052B] hover:bg-[#b80424] text-white font-black text-xs sm:text-sm uppercase tracking-wider px-7 py-3.5 rounded-xl flex items-center gap-2 group shadow-xl shadow-red-700/25 transition-all hover:scale-[1.02]"
+                      className="bg-[#DD052B] hover:bg-[#b80424] text-white font-black text-xs sm:text-sm uppercase tracking-wider px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl flex items-center gap-2 group shadow-xl shadow-red-700/25 transition-all hover:scale-[1.02]"
                     >
                       <span>{slide.cta1}</span>
                       <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </a>
                     <a
                       href={slide.href2}
-                      className="bg-white/90 hover:bg-white text-slate-900 dark:text-white dark:bg-white/10 dark:hover:bg-white/15 border border-slate-300 dark:border-white/20 font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3.5 rounded-xl backdrop-blur-md flex items-center gap-2 transition-all hover:border-[#DD052B] shadow-sm"
+                      className="bg-white/90 hover:bg-white text-slate-900 dark:text-white dark:bg-white/10 dark:hover:bg-white/15 border border-slate-300 dark:border-white/20 font-bold text-xs sm:text-sm uppercase tracking-wider px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl backdrop-blur-md flex items-center gap-2 transition-all hover:border-[#DD052B] shadow-sm"
                     >
                       <svg className="w-4 h-4 text-[#DD052B]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -640,35 +639,35 @@ export default function Hero() {
                     }`}
                   >
                     {i === 0 ? (
-                      <div className="relative w-full max-w-[390px] rounded-3xl overflow-hidden border border-white/80 dark:border-white/20 shadow-2xl bg-white/85 dark:bg-black/65 backdrop-blur-xl p-6 text-slate-900 dark:text-white transition-all hover:scale-[1.01]">
-                        <div className="flex items-center justify-between pb-3 border-b border-slate-200/80 dark:border-white/10 mb-4 gap-2">
+                      <div className="relative w-full max-w-[380px] rounded-2xl overflow-hidden border border-white/80 dark:border-white/20 shadow-xl bg-white/85 dark:bg-black/65 backdrop-blur-xl p-4 sm:p-5 text-slate-900 dark:text-white transition-all hover:scale-[1.01]">
+                        <div className="flex items-center justify-between pb-2.5 border-b border-slate-200/80 dark:border-white/10 mb-3 gap-2">
                           <LiveStoreStatus variant="compact" className="text-slate-800 dark:text-slate-200 text-xs" />
-                          <div className="relative h-7 w-28 flex items-center shrink-0">
+                          <div className="relative h-6 w-24 flex items-center shrink-0">
                             <Image
                               src="/images/logo-light.png"
                               alt="DN Mobiles"
                               fill
-                              sizes="112px"
+                              sizes="96px"
                               className="object-contain object-right dark:hidden"
                             />
                             <Image
                               src="/images/logo-dark.png"
                               alt="DN Mobiles"
                               fill
-                              sizes="112px"
+                              sizes="96px"
                               className="object-contain object-right hidden dark:block"
                             />
                           </div>
                         </div>
-                        <h3 className="text-lg font-black tracking-tight text-slate-900 dark:text-white mb-1.5 leading-snug">
+                        <h3 className="text-base font-black tracking-tight text-slate-900 dark:text-white mb-1 leading-snug">
                           18 Domeyer Court, Port Augusta
                         </h3>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                        <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
                           {isHi
                             ? "स्पेंसर गल्फ और क्षेत्रीय दक्षिण ऑस्ट्रेलिया का प्रमुख मोबाइल, टैबलेट व iPad रिपेयर लैब।"
                             : "Serving all regional Spencer Gulf communities with factory-calibrated iPhone, Samsung, iPad & tablet repairs."}
                         </p>
-                        <div className="grid grid-cols-2 gap-2 text-xs font-bold pt-3 border-t border-slate-200/80 dark:border-white/10">
+                        <div className="grid grid-cols-2 gap-1.5 text-[11px] font-bold pt-2.5 border-t border-slate-200/80 dark:border-white/10">
                           <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
                             <span>✓ {isHi ? "100% फ्री जांच" : "100% Free Diag"}</span>
                           </div>
@@ -684,19 +683,19 @@ export default function Hero() {
                         </div>
                       </div>
                     ) : (
-                      <div className="relative w-full max-w-[420px] rounded-3xl overflow-hidden border border-white/80 dark:border-white/20 shadow-2xl bg-white/85 dark:bg-gradient-to-b dark:from-white/10 dark:via-black/50 dark:to-black/85 backdrop-blur-xl p-3 group hover:border-[#DD052B]/60 transition-all duration-500">
-                        <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-carbon/95 border border-slate-200/80 dark:border-white/10 shadow-inner">
-                          <div className="relative w-full h-[320px] xl:h-[350px] flex items-center justify-center p-2">
+                      <div className="relative w-full max-w-[400px] rounded-2xl overflow-hidden border border-white/80 dark:border-white/20 shadow-xl bg-white/85 dark:bg-gradient-to-b dark:from-white/10 dark:via-black/50 dark:to-black/85 backdrop-blur-xl p-2.5 group hover:border-[#DD052B]/60 transition-all duration-500">
+                        <div className="relative rounded-xl overflow-hidden bg-white dark:bg-carbon/95 border border-slate-200/80 dark:border-white/10 shadow-inner">
+                          <div className="relative w-full h-[230px] sm:h-[250px] lg:h-[265px] xl:h-[280px] flex items-center justify-center p-2">
                             <Image
                               src={slide.sideImg}
                               alt={slide.sideImgAlt}
                               fill
-                              className="object-contain p-2 drop-shadow-2xl transition-transform duration-500 group-hover:scale-[1.03]"
-                              sizes="420px"
+                              className="object-contain p-1.5 drop-shadow-2xl transition-transform duration-500 group-hover:scale-[1.03]"
+                              sizes="400px"
                             />
                           </div>
-                          <div className="px-4 py-2.5 bg-slate-100/90 dark:bg-black/90 backdrop-blur-md border-t border-slate-200/80 dark:border-white/10 flex items-center justify-between text-xs text-slate-900 dark:text-white">
-                            <span className="font-extrabold flex items-center gap-1.5 truncate">
+                          <div className="px-3.5 py-2 bg-slate-100/90 dark:bg-black/90 backdrop-blur-md border-t border-slate-200/80 dark:border-white/10 flex items-center justify-between text-xs text-slate-900 dark:text-white">
+                            <span className="font-extrabold flex items-center gap-1.5 truncate text-[11px]">
                               <span>{slide.sideBadgeIcon}</span>
                               <span className="truncate">{slide.sideBadgeText}</span>
                             </span>
@@ -711,9 +710,9 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Big Statistics Numbers Overlay - Count from 0 to target in Phase 3 */}
-              <div className="pt-6 border-t border-white/25">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-4xl">
+              {/* Big Statistics Numbers Overlay - Lifted UP so animation is immediately visible above fold */}
+              <div className="pt-3 sm:pt-4 pb-1 border-t border-white/25">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 max-w-4xl">
                   {slide.stats.map((st, sIdx) => (
                     <div
                       key={sIdx}
@@ -723,14 +722,14 @@ export default function Hero() {
                           : "opacity-40 translate-y-2"
                       }`}
                     >
-                      <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight drop-shadow-md">
+                      <p className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight drop-shadow-md leading-none">
                         {i === index ? (
                           <StatCounter target={st.num} active={isNumbersActive} />
                         ) : (
                           st.num
                         )}
                       </p>
-                      <p className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-white/90 mt-1 drop-shadow-sm">
+                      <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-white/90 mt-1 drop-shadow-sm">
                         {st.label}
                       </p>
                     </div>
@@ -742,7 +741,7 @@ export default function Hero() {
         ))}
 
         {/* Bottom-right Red Navigation Arrows + Live Timer Countdown */}
-        <div className="absolute right-4 sm:right-8 bottom-6 sm:bottom-8 z-30 flex items-center gap-2.5">
+        <div className="absolute right-4 sm:right-8 bottom-3 sm:bottom-4 z-30 flex items-center gap-2.5">
           {/* Live Timer Countdown Badge */}
           <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 text-white shadow-xl">
             <span
