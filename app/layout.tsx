@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import FloatingRail from "./components/FloatingRail";
 import Footer from "./components/Footer";
 import LiveRecentRepairs from "./components/LiveRecentRepairs";
+import { Analytics } from "@vercel/analytics/next";
 import en from "../messages/en.json";
 
 const siteUrl = "https://www.dnmobiles.com.au";
@@ -306,6 +307,7 @@ export default function RootLayout({
             <LiveRecentRepairs />
           </LanguageProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
